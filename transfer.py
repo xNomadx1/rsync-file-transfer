@@ -47,7 +47,7 @@ def main() -> None:
     args = parser.parse_args()
     config = load_config()
 
-    source_folder = expand_env(config["source"]["downloads"])
+    source_folder = Path(expand_env(config["source"][args.source_key])).expanduser()
     target_folder = expand_env(config["targets"][args.target_key])
     options = config["rsync"]["options"]
 

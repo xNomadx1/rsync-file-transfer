@@ -1,0 +1,6 @@
+.venv_transfer/
+.env
+.config.toml
+config.toml
+__pycache__/
+*.pyc

@@ -13,6 +13,27 @@ source .venv_transfer/bin/activate
 pip install -r requirements.txt
 cp config.example.toml config.toml
 ```
+## rsync Options
+```bash
+	"-avh", 
+        # -a: archive mode; recursively transfers directories and preserves metadata.
+        # -v: displays transfer details.
+        # -h: displays human-readable file sizes.
+	"--partial",
+        # Keeps an incomplete destination file if the transfer is interrupted, allowing a later transfer
+        # to reuse it.
+	"--append-verify",
+        # Continues transferring from the end of an existing partial file, then verifies the completed
+        # file. This is mainly useful for large interrupted transfers.
+	"--info=progress2",
+        # Displays progress for the entire transfer rather than only individual files.
+	"--stats",
+        # Prints a transfer summary, including file counts, bytes transferred, and speed.
+	"--exclude=.DS_Store",
+        # Skips .DS_Store metadata files created by macOS.
+	"--exclude=Thumbs.db"
+        # Skips Thumbs.db thumbnail files created by Windows.
+```
 
 Edit `config.toml` with your source folders and remote targets. Linux home
 directories normally use `/home/username/`; macOS uses `/Users/username/`.

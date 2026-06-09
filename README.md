@@ -13,7 +13,7 @@ source .venv_transfer/bin/activate
 pip install -r requirements.txt
 cp config.example.toml config.toml
 ```
-## rsync Options
+## Rsync Options
 ```bash
 	"-avh", 
         # -a: archive mode; recursively transfers directories and preserves metadata.
